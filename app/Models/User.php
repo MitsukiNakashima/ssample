@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -32,6 +33,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function folders()
+    {
+        return $this->hasMany('App\Models\Folder');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -41,8 +47,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function folders()
-    {
-        return $this->hasMany('App\Models\Folder');
-    }
+    
 }
