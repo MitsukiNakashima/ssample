@@ -20,6 +20,6 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 <IfModule dir_module>
-    DirectoryIndex index.html index.php
+    DirectoryIndex index.php
 </IfModule>
 
