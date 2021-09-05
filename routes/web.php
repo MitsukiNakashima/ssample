@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('index');
 });
+
 Route::group(['middleware' => 'auth'], function() {
   //Route::get('/', 'HomeController@index')->name('index');
   Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
